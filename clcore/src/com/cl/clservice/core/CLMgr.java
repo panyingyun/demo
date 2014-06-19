@@ -2,8 +2,6 @@ package com.cl.clservice.core;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import android.app.AlarmManager;
 import android.app.DownloadManager;
@@ -17,8 +15,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.Bitmap;
-import android.os.Handler;
-import android.os.HandlerThread;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
@@ -819,6 +815,9 @@ public class CLMgr implements ICL {
 		DBThread.getInstance().post(new Runnable() {
 			@Override
 			public void run() {
+				if (dbHelper != null) {
+					dbHelper.getStatHelper().deleteUploadedData();
+				}
 				deleteOldFileByPath(GLOBAL.PICDOWNLOAD);
 				deleteOldFileByPath(GLOBAL.APKDOWNLOAD);
 			}

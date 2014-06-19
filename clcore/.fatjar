@@ -1,5 +1,5 @@
 #Fat Jar Configuration File
-#Thu Apr 17 17:27:12 CST 2014
+#Thu Jun 19 19:05:25 CST 2014
 onejar.license.required=true
 manifest.classpath=
 manifest.removesigners=true
@@ -10,5 +10,5 @@ manifest.mainclass=
 manifest.file=<createnew>
 jarname.isextern=false
 onejar.expand=
-excludes=<po|clcore>~com/~cl/~clservice/~CL.class;<po|clcore>~com/~cl/~clservice/~CLReceiver.class;<po|clcore>~com/~cl/~clservice/~CLService$ServiceBinder.class;<po|clcore>~com/~cl/~clservice/~CLService.class;<po|clcore>~com/~cl/~clservice/~ICL.class;<po|clcore>~com/~demo/;<jar|android-support-v4.jar>
+excludes=<po|clcore>~com/~cl/~clservice/~CL.class;<po|clcore>~com/~cl/~clservice/~CLReceiver.class;<po|clcore>~com/~cl/~clservice/~CLService$ServiceBinder.class;<po|clcore>~com/~cl/~clservice/~CLService.class;<po|clcore>~com/~cl/~clservice/~ICL.class;<po|clcore>~com/~demo/;<po|clcore>~com/~demopush_pri/;<jar|android-support-v4.jar>
 includes=
