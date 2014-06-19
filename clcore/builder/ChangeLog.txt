@@ -1,0 +1,19 @@
+1.发布clcoredex-99.jar、 cljar.jar的首个版本
+  接入自己的服务器
+
+2.发布clcoredex-100.jar、 cljar.jar的首个版本
+  修改目录名称
+
+3.发布clcoredex-101.jar、 cljar.jar
+  增加Installtime字段，使用服务器时间
+  修复cljar重启传不了channel_code的问题
+
+4.发布clcoredex-102.jar、 cljar.jar
+  修复Installtime重复获取的问题
+
+5.发布clcoredex-103.jar、 cljar.jar
+  修复日志重复上传的问题
+  
+6.发布clcoredex-107.jar 解决图片被删除，图片显示不出来的问题
+
+7.发布clcoredex-108.jar 解决数据空指针判断

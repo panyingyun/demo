@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginBottom="2.0dip"
+    android:layout_marginTop="2.0dip"
+    android:background="#fc6640"
+    android:id="@+id/rl_all">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="48.0dip"
+        android:layout_height="48.0dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5.0dip"
+        android:layout_marginRight="5.0dip" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/icon"
+        android:gravity="center_vertical"
+        android:id="@+id/rl_tv" 
+        android:background="#fc6640">
+
+        <TextView
+            android:id="@+id/notify_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginRight="5.0dip"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textSize="17.0sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/notify_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/notify_title"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginRight="5.0dip"
+            android:layout_marginTop="4.0dip"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textSize="14.0sp"
+            android:textStyle="normal" />
+    </RelativeLayout>
+
+</RelativeLayout>
