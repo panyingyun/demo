@@ -116,7 +116,7 @@ public class TableStat extends TableBase {
 		try {
 			mSQLiteDatabase.beginTransaction();
 			for (PushEvent event : list) {
-				String whereClause = S_ISUPLOAD + " = ?";
+				String whereClause = S_PUSHID + " = ?";
 				String[] whereValue = { String.valueOf(event.pushId) };
 				mSQLiteDatabase.delete(TABLE_STAT, whereClause, whereValue);
 			}
@@ -132,7 +132,7 @@ public class TableStat extends TableBase {
 		if (mSQLiteDatabase == null || !isDBExits())
 			return;
 		try {
-			String whereClause = S_PUSHID + " = ?";
+			String whereClause = S_ISUPLOAD + " = ?";
 			String[] whereValue = { String.valueOf(DBMsg.ISUPLOADTYPE.YES) };
 			mSQLiteDatabase.delete(TABLE_STAT, whereClause, whereValue);
 		} catch (Exception e) {
