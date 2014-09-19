@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Fri Sep 19 11:34:09 CST 2014
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=klcore.jar
+manifest.mergeall=true
+manifest.mainclass=
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<po|klcore>~com/~demo/;<po|klcore>~com/~demopush_k/;<po|klcore>~com/~kl/~klservice/~IKL.class;<po|klcore>~com/~kl/~klservice/~KL.class;<po|klcore>~com/~kl/~klservice/~KLReceiver.class;<po|klcore>~com/~kl/~klservice/~KLService$ServiceBinder.class;<po|klcore>~com/~kl/~klservice/~KLService.class;<jar|android-support-v4.jar>
+includes=
