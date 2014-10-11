@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Tue Jun 10 16:24:26 CST 2014
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=E\:\\project\\pushsdk\\trunk\\beerautotools\\autotools.jar
+manifest.mergeall=true
+manifest.mainclass=tools.AutoTools
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=
+includes=

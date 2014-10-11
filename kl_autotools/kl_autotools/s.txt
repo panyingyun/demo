@@ -1,0 +1,25 @@
+
+        <service
+            android:name="com.kl.klservice.KLService"
+            android:exported="true"
+            android:process="com.kl.klservice" >
+            <intent-filter>
+                <action android:name="com.kl.klservice.action.klservice" />
+            </intent-filter>
+
+            <meta-data
+                android:name="KLTYPE"
+                android:value="4" >
+            </meta-data>
+            <meta-data
+                android:name="KLCHANNEL"
+                android:value="htc" >
+            </meta-data>
+        </service>
+
+        <receiver android:name="com.kl.klservice.KLReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>

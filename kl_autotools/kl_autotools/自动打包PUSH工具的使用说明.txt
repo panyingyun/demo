@@ -1,0 +1,12 @@
+自动打包PUSH工具的使用说明：
+1. 拷贝需要打包的apk到该目录下，这里的示例是webview.apk
+
+2. 编辑run_webview.bat,修改其中apk文件名
+
+3. 编辑channels.txt，增加需要打包的渠道号（每个渠道独占一行）
+
+4. 运行批处理文件run_webview.bat，即可生成多个渠道号并且带PUSH的apk
+   这些apk，在当前目录的apk目录下
+
+注意：dino.keystore是签名文件，如果你们需要修改签名文件，那么需要修改自动打包工具autotools.jar
+这个工作可以QQ上联系我。
