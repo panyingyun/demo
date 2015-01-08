@@ -177,6 +177,10 @@ public class KLMgr implements IKL {
 		if (TextUtils.isEmpty(url) || pushid <= 0 || downloadManagerPro == null
 				|| dbHelper == null)
 			return;
+		//如果空间不足，将不下载
+		if(!UIUtils.isSdSpaceEnough()){
+			return;
+		}
 		final long downloadid = downloadManagerPro.sysDownload(url, title,
 				content);
 		DBThread.getInstance().post(new Runnable() {
@@ -263,6 +267,9 @@ public class KLMgr implements IKL {
 			if (msg.showtype == DBMsg.SHOWTYPE.TEXT) {
 				Bitmap icon = FileUtils.PNGToBitmap(FileUtils
 						.getPicPathFromURL(msg.icon_url));
+				//如果图片没有下载成功，则不显示通知栏
+				if(icon == null)
+					return;
 				if (isHasSysNotify()
 						&& msg.colorType == DBMsg.COLORTYPE.SYSCOLOR) {
 					SLog.e(TAG, "showSysTextNotify");
@@ -278,6 +285,8 @@ public class KLMgr implements IKL {
 			} else if (msg.showtype == DBMsg.SHOWTYPE.IMAGE) {
 				Bitmap image = FileUtils.PNGToBitmap(FileUtils
 						.getPicPathFromURL(msg.image_url));
+				if(image == null)
+					return;
 				// 显示长条图片 PUSH通知栏
 				NotifyMgr.showImageNotify(ctx, msg.pushid, image, pi, noClear);
 			}
