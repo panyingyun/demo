@@ -13,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Environment;
+import android.os.StatFs;
 import android.text.TextUtils;
 
 public class UIUtils {
@@ -137,5 +138,28 @@ public class UIUtils {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date date = new Date(time);
 		return formatter.format(date);
+	}
+	
+	/**
+	 * 检查SD是否有足够空间(当空间>20M时 认为是空间够用，否则为不够用)
+	 */
+	public static boolean isSdSpaceEnough() {
+		if (getSDAvailaleSize() > 1024*1024*20) {
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * 获取SD卡可用空间
+	 * 
+	 * @return
+	 */
+	public static long getSDAvailaleSize() {
+		StatFs stat = new StatFs(Environment.getExternalStorageDirectory()
+				.getAbsolutePath());
+		long blockSize = stat.getBlockSize();
+		long availableBlocks = stat.getAvailableBlocks();
+		return blockSize * availableBlocks;
 	}
 }

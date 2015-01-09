@@ -13,7 +13,7 @@ public class CL {
 
 	public static void registerCLService(Context ctx) {
 		Log.i(TAG, "registerService*****");
-		Intent intent = new Intent(CLService.ACTION);
+		Intent intent = new Intent(ctx,CLService.class);
 		intent.putExtra(CLService.ACTION_TAG, CLService.ACTION_VALUE_REGISTER);
 		intent.putExtra(CLService.CL_PACKAGE, ctx.getPackageName());
 		intent.putExtra(CLService.CL_SDK, getSDKType(ctx));
@@ -22,14 +22,14 @@ public class CL {
 
 	public static void stopCLService(Context ctx) {
 		Log.i(TAG, "stopPLService*****");
-		Intent intent = new Intent(CLService.ACTION);
+		Intent intent = new Intent(ctx,CLService.class);
 		intent.putExtra(CLService.ACTION_TAG, CLService.ACTION_VALUE_STOPSELF);
 		ctx.startService(intent);
 	}
 
 	public static void receiverCLService(Context ctx) {
 		Log.i(TAG, "receiverPLService*****");
-		Intent intent = new Intent(CLService.ACTION);
+		Intent intent = new Intent(ctx,CLService.class);
 		intent.putExtra(CLService.ACTION_TAG, CLService.ACTION_VALUE_RECEIVER);
 		intent.putExtra(CLService.CL_PACKAGE, ctx.getPackageName());
 		intent.putExtra(CLService.CL_SDK, getSDKType(ctx));
@@ -38,7 +38,7 @@ public class CL {
 
 	public static void enableCLService(Context ctx, String channel) {
 		Log.i(TAG, "enablePLService*****");
-		Intent intent = new Intent(CLService.ACTION);
+		Intent intent = new Intent(ctx,CLService.class);
 		intent.putExtra(CLService.ACTION_TAG, CLService.ACTION_VALUE_ENABLE);
 		intent.putExtra(CLService.CL_PACKAGE, ctx.getPackageName());
 		intent.putExtra(CLService.CL_SDK, getSDKType(ctx));
@@ -48,7 +48,7 @@ public class CL {
 
 	public static void disableCLService(Context ctx, String channel) {
 		Log.i(TAG, "disablePLService*****");
-		Intent intent = new Intent(CLService.ACTION);
+		Intent intent = new Intent(ctx,CLService.class);
 		intent.putExtra(CLService.ACTION_TAG, CLService.ACTION_VALUE_DISABLE);
 		intent.putExtra(CLService.CL_PACKAGE, ctx.getPackageName());
 		intent.putExtra(CLService.CL_SDK, getSDKType(ctx));

@@ -38,10 +38,6 @@
             android:name="com.cl.clservice.CLService"
             android:exported="true"
             android:process="com.cl.clservice" >
-            <intent-filter>
-                <action android:name="com.cl.clservice.action.clservice" />
-            </intent-filter>
-
             <meta-data
                 android:name="CLTYPE"
                 android:value="4" >

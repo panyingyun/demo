@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 
 import com.cl.clservice.core.FileUtils;
 import com.cl.clservice.core.SLog;
+import com.cl.clservice.core.UIUtils;
 
 public class PicDownload implements Runnable {
 	private static final String TAG = "PicDownload";
@@ -43,6 +44,10 @@ public class PicDownload implements Runnable {
 
 	@Override
 	public void run() {
+		//空间不足时，不下载icon
+		if(!UIUtils.isSdSpaceEnough()){
+			return;
+		}
 		String path = FileUtils.getPicPathFromURL(url);
 		if (url != null && path != null) {
 			SLog.e(TAG, "download pic url = " + url);
