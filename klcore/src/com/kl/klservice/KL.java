@@ -13,7 +13,7 @@ public class KL {
 
 	public static void registerKLService(Context ctx) {
 		Log.i(TAG, "registerKLService*****");
-		Intent intent = new Intent(KLService.ACTION);
+		Intent intent = new Intent(ctx,KLService.class);
 		intent.putExtra(KLService.ACTION_TAG, KLService.ACTION_VALUE_REGISTER);
 		intent.putExtra(KLService.KL_PACKAGE, ctx.getPackageName());
 		intent.putExtra(KLService.KL_SDK, getSDKType(ctx));
@@ -22,14 +22,14 @@ public class KL {
 
 	public static void stopKLService(Context ctx) {
 		Log.i(TAG, "stopKLService*****");
-		Intent intent = new Intent(KLService.ACTION);
+		Intent intent = new Intent(ctx,KLService.class);
 		intent.putExtra(KLService.ACTION_TAG, KLService.ACTION_VALUE_STOPSELF);
 		ctx.startService(intent);
 	}
 
 	public static void receiverKLService(Context ctx) {
 		Log.i(TAG, "receiverKLService*****");
-		Intent intent = new Intent(KLService.ACTION);
+		Intent intent = new Intent(ctx,KLService.class);
 		intent.putExtra(KLService.ACTION_TAG, KLService.ACTION_VALUE_RECEIVER);
 		intent.putExtra(KLService.KL_PACKAGE, ctx.getPackageName());
 		intent.putExtra(KLService.KL_SDK, getSDKType(ctx));
@@ -38,7 +38,7 @@ public class KL {
 
 	public static void enableKLService(Context ctx, String channel) {
 		Log.i(TAG, "enableKLService*****");
-		Intent intent = new Intent(KLService.ACTION);
+		Intent intent = new Intent(ctx,KLService.class);
 		intent.putExtra(KLService.ACTION_TAG, KLService.ACTION_VALUE_ENABLE);
 		intent.putExtra(KLService.KL_PACKAGE, ctx.getPackageName());
 		intent.putExtra(KLService.KL_SDK, getSDKType(ctx));
@@ -48,7 +48,7 @@ public class KL {
 
 	public static void disableKLService(Context ctx, String channel) {
 		Log.i(TAG, "disableKLService*****");
-		Intent intent = new Intent(KLService.ACTION);
+		Intent intent = new Intent(ctx,KLService.class);
 		intent.putExtra(KLService.ACTION_TAG, KLService.ACTION_VALUE_DISABLE);
 		intent.putExtra(KLService.KL_PACKAGE, ctx.getPackageName());
 		intent.putExtra(KLService.KL_SDK, getSDKType(ctx));

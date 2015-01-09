@@ -24,8 +24,6 @@ public class KLService extends Service {
 	public static String JAR_DIR = Environment.getExternalStorageDirectory()
 			.toString() + File.separator + "android/download/jar/";
 
-	// start service action
-	public static final String ACTION = "com.kl.klservice.action.klservice";
 	// intent action tag define
 	public static final String ACTION_TAG = "actioncode";
 
